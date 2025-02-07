@@ -49,6 +49,7 @@ uintptr_t GetJobByName(const std::string Name)
 
 uintptr_t GetDatamodelByJob() /* Method 1: WaitingHybridScriptsJob */
 {
+    /* NOTE: If you are on the Homepage, this method might not work and you will recieve the wrong datamodel. */
     const uintptr_t WaitingHybridScriptsJob = GetJobByName("WaitingHybridScriptsJob");
     const uintptr_t script_context = WaitingHybridScriptsJob + Offsets::ScriptContext;
 
@@ -69,7 +70,7 @@ uintptr_t GetDatamodelByDeleter() /* Method 2: Get by Fake DataModel */
     return RealDataModel;
 }
 
-uintptr_t GetDatamodelByRenderJob()
+uintptr_t GetDatamodelByRenderJob() /* Method 3: RenderJob */
 {
     const uintptr_t RenderJob = GetJobByName("RenderJob"); /* Render Job for Roblox */
     const uintptr_t ptr1 = reinterpret_cast<uintptr_t>(RenderJob + 0xb0);
