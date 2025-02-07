@@ -7,7 +7,7 @@ namespace Roblox {
     uintptr_t Datamodel;
     std::vector<uintptr_t> Jobs;
 }
-
+/* Offsets might not be accurate. */
 namespace Offsets {
     const uintptr_t vm__fake_datamodel = 0x5C41ED0;
     const uintptr_t vm__get_scheduler = 0x2DF8100;
